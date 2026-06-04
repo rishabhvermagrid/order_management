@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Integer>{
+    List<User> findByNameContainingIgnoreCase(String name);
     //Learning JPQL
     @Query("SELECT u FROM User u")
     List<User> getAllUsersJPQL();

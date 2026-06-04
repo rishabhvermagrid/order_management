@@ -28,6 +28,11 @@ public class User {
         this.name = name;
     }
 
+    public void addOrder(Order order) {
+        orders.add(order);
+        order.setUser(this);
+    }
+
     public List<Order> getOrders() {
         return orders;
     }

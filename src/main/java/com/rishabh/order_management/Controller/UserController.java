@@ -1,14 +1,13 @@
 package com.rishabh.order_management.Controller;
 
-
 import com.rishabh.order_management.DTO.UserResponseDTO;
 import com.rishabh.order_management.DTO.UserRequestDTO;
 import com.rishabh.order_management.Model.User;
 import com.rishabh.order_management.Service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -36,6 +35,15 @@ public class UserController{
         return userService.getUserById(id);
     }
 
+    // update user
+    @PutMapping("/{id}")
+    public UserResponseDTO updateUser(
+            @PathVariable int id,
+            @Valid @RequestBody UserRequestDTO request
+    ) {
+        return userService.updateUser(id, request);
+    }
+
     // delete user
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable int id) {
@@ -48,26 +56,22 @@ public class UserController{
     public List<User> getUsersJPQL() {
         return userService.getUsersJPQL();
     }
+
+
     @GetMapping("/search")
     public List<User> searchUser(
             @RequestParam String name
     ) {
         return userService.searchUser(name);
     }
+
     @GetMapping("/email")
     public List<User> searchEmail(@RequestParam String email){
         return userService.seachUsingEmail(email);
     }
 
     @GetMapping("/pagination")
-    public Page<User> getUsersPaginated(
-            @RequestParam int page,
-            @RequestParam int size
-    ) {
-
-        return userService
-                .getUsersPaginated(page, size);
+    public Page<User> getUsersPaginated(Pageable pageable) {
+        return userService.getUsersPaginated(pageable);
     }
-
-
 }
