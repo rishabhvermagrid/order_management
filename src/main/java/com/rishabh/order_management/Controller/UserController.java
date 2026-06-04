@@ -7,6 +7,7 @@ import com.rishabh.order_management.Service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -19,9 +20,21 @@ public class UserController{
     }
 
     @PostMapping
-    public UserResponseDTO createUser(@Valid @RequestBody UserRequestDTO request) {
-        return userService.createUser(request);
+    public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO request) {
+        UserResponseDTO user =  userService.createUser(request);
+        return ResponseEntity.status(201).body(user);
     }
+
+    // get user by id
+    @GetMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> getUser(
+            @PathVariable int id) {
+
+        return ResponseEntity.ok(
+                userService.getUserById(id)
+        );
+    }
+
 
     // get all users
     @GetMapping
@@ -29,26 +42,26 @@ public class UserController{
         return userService.getAllUsers();
     }
 
-    // get user by id
-    @GetMapping("/{id}")
-    public UserResponseDTO getUser(@PathVariable int id) {
-        return userService.getUserById(id);
-    }
 
-    // update user
+
     @PutMapping("/{id}")
-    public UserResponseDTO updateUser(
+    public ResponseEntity<UserResponseDTO> updateUser(
             @PathVariable int id,
             @Valid @RequestBody UserRequestDTO request
     ) {
-        return userService.updateUser(id, request);
+
+        return ResponseEntity.ok(
+                userService.updateUser(id, request)
+        );
     }
 
-    // delete user
     @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable int id) {
+    public ResponseEntity<Void> deleteUser(
+            @PathVariable int id) {
+
         userService.deleteUser(id);
-        return "User deleted";
+
+        return ResponseEntity.noContent().build();
     }
 
     //jpql
@@ -71,7 +84,11 @@ public class UserController{
     }
 
     @GetMapping("/pagination")
-    public Page<User> getUsersPaginated(Pageable pageable) {
-        return userService.getUsersPaginated(pageable);
+    public ResponseEntity<Page<User>> getUsersPaginated(
+            Pageable pageable) {
+
+        return ResponseEntity.ok(
+                userService.getUsersPaginated(pageable)
+        );
     }
 }
