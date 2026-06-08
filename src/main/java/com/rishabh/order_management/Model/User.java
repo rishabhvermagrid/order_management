@@ -15,6 +15,10 @@ public class User {
     private String user_name;
     private String name;
     private String email;
+
+
+
+    private String password;
     @OneToMany(
             mappedBy = "user", //Hibernate should look at user field inside Order
             cascade = CascadeType.ALL, //if you save user,all orders also save automatically.
@@ -23,14 +27,24 @@ public class User {
     private List<Order> orders = new ArrayList<>();
 
     public User(){}
-    public User(Integer id, List<Order> orders, String email, String name, String userName) {
+    public User(Integer id, List<Order> orders, String email, String name, String userName,String password) {
         this.id = id;
         this.orders = orders;
         this.email = email;
         this.name = name;
         this.user_name = userName;
+        this.password = password;
     }
 
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
     public void addOrder(Order order) {
         orders.add(order);
         order.setUser(this);

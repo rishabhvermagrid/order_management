@@ -1,5 +1,6 @@
 package com.rishabh.order_management.DTO;
 
+import com.rishabh.order_management.CustomValidationAnnotation.StrongPassword;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -20,14 +21,29 @@ public class UserRequestDTO {
     )
     private String userName;
 
+    @NotBlank
+    @StrongPassword
+    private String password;
+
     public UserRequestDTO() {
     }
 
-    public UserRequestDTO(String name, String userName, String email) {
+    public UserRequestDTO(String name, String userName, String email, String password) {
         this.name = name;
         this.email = email;
         this.userName = userName;
+        this.password = password;
+
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
     public String getUserName() {
         return userName;
