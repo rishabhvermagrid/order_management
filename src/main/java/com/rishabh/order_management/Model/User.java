@@ -1,6 +1,7 @@
 package com.rishabh.order_management.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String user_name;
     private String name;
     private String email;
     @OneToMany(
@@ -21,11 +23,12 @@ public class User {
     private List<Order> orders = new ArrayList<>();
 
     public User(){}
-    public User(Integer id, List<Order> orders, String email, String name) {
+    public User(Integer id, List<Order> orders, String email, String name, String userName) {
         this.id = id;
         this.orders = orders;
         this.email = email;
         this.name = name;
+        this.user_name = userName;
     }
 
     public void addOrder(Order order) {
@@ -51,6 +54,12 @@ public class User {
 
     public String getName() {
         return name;
+    }
+    public void setUserName(String userName){
+        this.user_name = userName;
+    }
+    public String getUserName(){
+        return user_name;
     }
 
     public void setName(String name) {

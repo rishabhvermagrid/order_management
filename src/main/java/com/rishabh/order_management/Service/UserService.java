@@ -25,7 +25,8 @@ public class UserService {
         return new UserResponseDTO(
                 user.getId(),
                 user.getName(),
-                user.getEmail()
+                user.getEmail(),
+                user.getUserName()
         );
     }
 
@@ -40,6 +41,7 @@ public class UserService {
         User user = new User();
         user.setName(request.getName());
         user.setEmail(request.getEmail());
+        user.setUserName(request.getUserName());
         User savedUser = userRepository.save(user);
 
         return toResponseDTO(savedUser);

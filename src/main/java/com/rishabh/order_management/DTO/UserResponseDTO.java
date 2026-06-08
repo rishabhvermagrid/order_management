@@ -5,19 +5,30 @@ public class UserResponseDTO {
     private int id;
     private String name;
     private String email;
+    private String userName;
+
 
     public UserResponseDTO() {
     }
 
     public UserResponseDTO(int id,
                            String name,
-                           String email) {
+                           String email,
+                           String userName) {
 
         this.id = id;
         this.name = name;
         this.email = email;
+        this.userName = userName;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
     public int getId() {
         return id;
     }
