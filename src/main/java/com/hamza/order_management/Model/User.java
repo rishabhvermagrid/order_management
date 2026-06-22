@@ -1,7 +1,6 @@
-package com.rishabh.order_management.Model;
+package com.hamza.order_management.Model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Pattern;
 
 import java.util.ArrayList;
 import java.util.List;

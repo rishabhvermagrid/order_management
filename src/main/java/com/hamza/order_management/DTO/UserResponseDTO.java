@@ -1,4 +1,4 @@
-package com.rishabh.order_management.DTO;
+package com.hamza.order_management.DTO;
 
 public class UserResponseDTO {
 

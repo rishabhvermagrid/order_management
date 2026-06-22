@@ -1,12 +1,11 @@
-package com.rishabh.order_management.Service;
+package com.hamza.order_management.Service;
 
 
-import com.rishabh.order_management.DTO.UserResponseDTO;
-import com.rishabh.order_management.DTO.UserRequestDTO;
-import com.rishabh.order_management.Exception.UserNotFoundException;
-import com.rishabh.order_management.Model.User;
-import com.rishabh.order_management.Repository.UserRepository;
-import org.springframework.data.domain.PageRequest;
+import com.hamza.order_management.DTO.UserResponseDTO;
+import com.hamza.order_management.DTO.UserRequestDTO;
+import com.hamza.order_management.Exception.UserNotFoundException;
+import com.hamza.order_management.Model.User;
+import com.hamza.order_management.Repository.UserRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.rishabh.order_management.Repository;
+package com.hamza.order_management.Repository;
 
-import com.rishabh.order_management.Model.User;
+import com.hamza.order_management.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
