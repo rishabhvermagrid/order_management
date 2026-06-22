@@ -1,9 +1,9 @@
-package com.rishabh.order_management.Controller;
+package com.hamza.order_management.Controller;
 
-import com.rishabh.order_management.DTO.UserResponseDTO;
-import com.rishabh.order_management.DTO.UserRequestDTO;
-import com.rishabh.order_management.Model.User;
-import com.rishabh.order_management.Service.UserService;
+import com.hamza.order_management.DTO.UserResponseDTO;
+import com.hamza.order_management.DTO.UserRequestDTO;
+import com.hamza.order_management.Model.User;
+import com.hamza.order_management.Service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

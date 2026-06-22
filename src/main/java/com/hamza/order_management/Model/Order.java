@@ -1,4 +1,4 @@
-package com.rishabh.order_management.Model;
+package com.hamza.order_management.Model;
 
 import jakarta.persistence.*;
 

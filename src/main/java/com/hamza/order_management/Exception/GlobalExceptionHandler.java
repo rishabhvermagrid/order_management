@@ -1,6 +1,6 @@
-package com.rishabh.order_management.Exception;
+package com.hamza.order_management.Exception;
 
-import com.rishabh.order_management.DTO.ErrorResponseDTO;
+import com.hamza.order_management.DTO.ErrorResponseDTO;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;

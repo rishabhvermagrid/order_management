@@ -1,4 +1,4 @@
-package com.rishabh.order_management.Exception;
+package com.hamza.order_management.Exception;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String message) {
