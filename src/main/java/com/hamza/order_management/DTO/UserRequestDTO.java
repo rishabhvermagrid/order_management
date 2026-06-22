@@ -1,6 +1,6 @@
-package com.rishabh.order_management.DTO;
+package com.hamza.order_management.DTO;
 
-import com.rishabh.order_management.CustomValidationAnnotation.StrongPassword;
+import com.hamza.order_management.CustomValidationAnnotation.StrongPassword;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

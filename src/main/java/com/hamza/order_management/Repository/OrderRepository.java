@@ -1,6 +1,6 @@
-package com.rishabh.order_management.Repository;
+package com.hamza.order_management.Repository;
 
-import com.rishabh.order_management.Model.Order;
+import com.hamza.order_management.Model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

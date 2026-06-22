@@ -1,4 +1,4 @@
-package com.rishabh.order_management.CustomValidationAnnotation;
+package com.hamza.order_management.CustomValidationAnnotation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

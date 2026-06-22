@@ -1,13 +1,13 @@
-package com.rishabh.order_management;
+package com.hamza.order_management;
+// Task 2: Verify One-to-Many relationship between User and Order
 
-import com.rishabh.order_management.Model.Order;
-import com.rishabh.order_management.Model.User;
-import com.rishabh.order_management.Repository.OrderRepository;
-import com.rishabh.order_management.Repository.UserRepository;
+import com.hamza.order_management.Model.Order;
+import com.hamza.order_management.Model.User;
+import com.hamza.order_management.Repository.OrderRepository;
+import com.hamza.order_management.Repository.UserRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -1,4 +1,4 @@
-package com.rishabh.order_management;
+package com.hamza.order_management;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
